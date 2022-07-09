@@ -72,7 +72,7 @@ jobs:
         if: steps.check.outputs.need_update == 1
         run: |
           version_short=`echo ${{ steps.files.outputs.ap }} | cut -d'_' -f3`
-          version_csc=`echo ${{ steps.files.outputs.csc }} | cut -d'_' -f3`
+          version_csc=`echo ${{ steps.files.outputs.csc }} | cut -d'_' -f4`
           version_modem=`echo ${{ steps.files.outputs.cp }} | cut -d'_' -f3`
           [[ $version_short == ${{ steps.check.outputs.latest_shortversion }} ]] && echo PDA version: $version_short >> versions.txt
           [[ $version_csc == ${{ steps.check.outputs.latest_cscversion }} ]] && echo CSC version: $version_csc >> versions.txt
